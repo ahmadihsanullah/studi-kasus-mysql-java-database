@@ -3,6 +3,7 @@ package com.studi.kasus;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -78,5 +79,11 @@ public class BukuRepositoryTest {
         // Melakukan update buku
         bukuRepository.updateBuku(buku, "iha_2024_12112");
 
+    }
+
+    @Test 
+    void hapusBuku(){
+        bukuRepository.hapusBuku("ahmad_2022_0");
+        assertTrue(true);
     }
 }

@@ -13,6 +13,6 @@ public interface BukuRepository {
     
     void updateBuku(Buku buku, String kode);
 
-    void hapusBuku();
+    void hapusBuku(String kode);
 
 }

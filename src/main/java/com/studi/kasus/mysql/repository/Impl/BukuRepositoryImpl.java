@@ -131,9 +131,13 @@ public class BukuRepositoryImpl implements BukuRepository {
     
 
     @Override
-    public void hapusBuku() {
+    public void hapusBuku(String kode) {
         try(Connection connection = ConnectionUtil.getDataSource().getConnection()){
-        
+            String sql = "DELETE FROM books WHERE kode = ?";
+            try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+                preparedStatement.setString(1, kode);
+                preparedStatement.executeUpdate();
+            }
         } catch (SQLException e) {
              throw new RuntimeException(e);
         }
